@@ -4,7 +4,7 @@ menu = """
 [S]sacar
 [E]exibir extrato
 [s]sair
---->"""
+o que deseja fazer ? --->"""
 
 saldo=1000.00
 limite=500
@@ -30,38 +30,38 @@ while True:
             print("falha ao realizar depósito! tente novamente mais tarde")
         
 
-    elif N =="S":
+       elif N =="S":
         
-        S=float(input("informe o valor que queira sacar:"))
-
-        if saldo < S :
+            S=float(input("informe o valor que queira sacar:"))
+ 
+       if saldo < S :
             print ("Não podemos realizar o saque porque o valor é maior que o seu saldo!!!!")
             
-        elif S > limite:
+       elif S > limite:
             print("Não é possível realizar o saque !!!! Porque o seu limite de saque é de R$500.00")  
         
-        elif numero_saques >= LIMITE_SAQUES :
+       elif numero_saques >= LIMITE_SAQUES :
             print("voçê atingiu o limite de saque díário!!!")  
 
 
-        elif S > 0 :
+       elif S > 0 :
             print(f"seu saldo é {saldo}")
             saldo -= S
             extrato+=f"Saque:R$ {S:.2f}"
             numero_saques+=1
             print (f"seu saldo atual é de {saldo}") 
-        else:
-            print ("Não é possível realizar o saque porque o valor dosaque é inválido!!!!")
+       else:
+            print ("Não é possível realizar o saque porque o valor do saque é inválido!!!!")
 
-    elif N=="E":
-        print("\n----------EXTRATO----------")
-        print("Não ouve movimentações na sua conta." if not extrato else extrato)
-        print(f"\nSaldo : R${saldo:.2f}")
-        print("-----------Esse é o seu extrato----------")
+       elif N=="E":
+            print("\n----------EXTRATO----------")
+            print("Não ouve movimentações na sua conta." if not extrato else extrato)
+            print(f"\nSaldo : R${saldo:.2f}")
+            print("-----------Esse é o seu extrato----------")
 
-    elif N=="s":
-        break
+       elif N=="s":
+            break
 
 
-    else:
-        print("não reconhecemos a ação ! Por favor , tente outra operação")
+       else:
+            print("não reconhecemos a ação ! Por favor , tente outra operação")
